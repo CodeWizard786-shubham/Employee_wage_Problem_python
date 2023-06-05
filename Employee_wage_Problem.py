@@ -3,8 +3,8 @@
 @Author: shubham shirke
 @Date: 2023-06-05 12:32:30
 @Last Modified by: shubham shirke
-@Last Modified time: 2023-06-05 12:57:30
-@Title : Employee Wage Problem to calculate daily employee wage.
+@Last Modified time: 2023-06-05 15:15:30
+@Title : Employee Wage Problem to calculate monthly employee wage.
 '''
 
 import random
