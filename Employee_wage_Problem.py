@@ -57,15 +57,19 @@ def main():
     wage_per_hour=20
     full_day_hour=8
     part_day_hour=4
-    choice = int(input("Enter 1: Full time Employee \n 2: Part time Employee: \n Enter Choice: "))
-    if choice == 1:
-        random_attendace_number=check_attendance()
-        calculate_daily_employee_wage_full_time(random_attendace_number,wage_per_hour,full_day_hour)
-    elif choice == 2 :
-        random_attendace_number=check_attendance()
-        calculate_daily_employee_wage_part_time(random_attendace_number,wage_per_hour,part_day_hour)
-    else:
-        print("entered option is incorrect. Please enter 1 for full time employee or 2 for part time employee")
+    bool = True
+    while(bool):
+        choice = int(input("Enter \n 1: Full time Employee \n 2: Part time Employee: \n 3: Exit \n Enter Choice: "))
+        if choice == 1:
+            random_attendace_number=check_attendance()
+            calculate_daily_employee_wage_full_time(random_attendace_number,wage_per_hour,full_day_hour)
+        elif choice == 2 :
+            random_attendace_number=check_attendance()
+            calculate_daily_employee_wage_part_time(random_attendace_number,wage_per_hour,part_day_hour)
+        elif choice == 3:
+            bool = False
+        else:
+            print("entered option is incorrect. Please enter 1 for full time employee or 2 for part time employee")
 
 
 # start Execution
