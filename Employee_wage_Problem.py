@@ -2,8 +2,8 @@
 @Author: shubham shirke
 @Date: 2023-06-05 12:32:30
 @Last Modified by: shubham shirke
-@Last Modified time: 2023-06-05 13:35:30
-@Title : Employee Wage Problem to get monthly wage and total working hour with seperate working hour function .
+@Last Modified time: 2023-06-05 13:48:30
+@Title : Employee Wage Problem to get list of daily wages for a month or max working hours.
 '''
 
 import random
@@ -16,6 +16,7 @@ max_working_hour = 100
 is_full_time = 1
 is_part_time = 2
 is_absent = 0
+daily_wage_list=[]
 
 def generate_random_number():
     """
@@ -50,7 +51,7 @@ def calculate_employee_wage():
     """
     Description: This function computes the employee wage for a month or max working hour for a full-time or part-time employee.
     Parameters: none
-    result : montly wage of the employee along with total working hour.
+    result : montly wage of the employee along with total working hour and list of daily wages for a month or max work hours.
     
     """
     month_days = 0
@@ -67,18 +68,21 @@ def calculate_employee_wage():
             month_days += 1
             total_work_hour += get_work_hours(employee_working_type)
             print(f"Daily wage of full-time employee is: {daily_wage}$")
+            daily_wage_list.append(daily_wage)
         elif employee_working_type == is_part_time:
             daily_wage = part_day_hour * wage_per_hour
             month_wage += daily_wage
             month_days += 1
             total_work_hour += get_work_hours(employee_working_type)
             print(f"Daily wage of part-time employee is: {daily_wage}$")
+            daily_wage_list.append(daily_wage)
         else:
             daily_wage = absent_wage * wage_per_hour
             month_days +=1
             month_wage += daily_wage
             total_work_hour += get_work_hours(employee_working_type)
             print(f"Daily wage of employee is:{daily_wage}$")
+            daily_wage_list.append(daily_wage)
         if(month_days == max_monthly_days or total_work_hour == max_working_hour):
             break
     
@@ -86,6 +90,7 @@ def calculate_employee_wage():
     print()
     print(f"Monthly wage of Employee is: {month_wage}$")
     print(f"Total working time of Employee is: {total_work_hour}")
+    print(f"The list of daily wages for the month are:{daily_wage_list}")
 
 # main
 def main():
